@@ -205,6 +205,11 @@ app.post("/analyze-inference", (req, res) => {
     });
 });
 
+
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "index.html"));
+});
+
 app.listen(3000, () => {
     console.log("Full system ready at http://localhost:3000");
 });
