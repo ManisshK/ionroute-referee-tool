@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Inference Route Planner</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="goldGlow"></div>
+
+<div class="topShell">
+
+<h1 class="brandTitle">IONROUTE</h1>
+<h1 class="mainHeadline">Inference Route Planner</h1>
+<p class="subHeadline">AWS Inference Advisor • Cyber Gold Edition</p>
+
+<div class="inputBox">
+
+<div class="fieldRow">
+<label>Model Size (MB)</label>
+<input type="number" id="mSize" placeholder="e.g., 200" min="1" required>
+</div>
+
+<div class="fieldRow">
+<label>Latency Target (ms)</label>
+<input type="number" id="mLatency" placeholder="e.g., 100" min="1" required>
+</div>
+
+<div class="fieldRow">
+<label>GPU Required?</label>
+<select id="mGpu">
+<option>No</option>
+<option>Yes</option>
+</select>
+</div>
+
+<div class="fieldRow">
+<label>Traffic Pattern</label>
+<select id="mTraffic">
+<option>Steady</option>
+<option>Spiky</option>
+<option>Burst</option>
+<option>Offline</option>
+</select>
+</div>
+
+<div class="fieldRow">
+<label>Budget Level</label>
+<select id="mBudget">
+<option>Low</option>
+<option>Medium</option>
+<option>High</option>
+</select>
+</div>
+
+<div class="fieldRow">
+<label>Cold Start Acceptance</label>
+<select id="mCold">
+<option>Low</option>
+<option>Medium</option>
+<option>High</option>
+</select>
+</div>
+
+<button id="runPlan" class="goldButton">Compare Routes</button>
+
+</div>
+
+<div id="loadingBox" class="loadingBox hideArea">
+<div class="spinGold"></div>
+<p id="loadingText">Evaluating inference pathways…</p>
+</div>
+
+<div id="bestBox" class="bestBox hideArea">
+<h2 class="bestTitle">Recommended Route</h2>
+<p id="bestText"></p>
+<button id="showGraph" class="smallButton">View Radar Comparison</button>
+</div>
+
+<div id="costEst" class="costBox hideArea"></div>
+
+<div id="compGrid" class="compGrid hideArea"></div>
+
+<div class="footerBrand">
+Made by Manissh Kalasapakkam • 
+<a href="https://github.com/ManisshK" target="_blank">GitHub</a> • 
+<a href="https://www.linkedin.com/in/manisshkalsapakkam" target="_blank">LinkedIn</a>
+</div>
+
+
+</div>
+
+<div id="modalBg" class="modalBg hideArea"></div>
+
+<div id="modalBox" class="modalBox hideArea">
+<div class="modalHeader">
+<h3 class="modalTitle">📊 Performance Comparison Radar</h3>
+<span id="closeModal" class="modalClose">✕</span>
+</div>
+<div class="modalContent">
+<canvas id="radarCanvas" class="modalChart"></canvas>
+<div id="legendContainer" class="legendContainer"></div>
+</div>
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "goal": "Help build an AWS inference comparison tool with clean UI and structured trade-off logic.",
+  "context": [
+    "Compare AWS inference deployment options",
+    "Explain latency, cost, scalability, cold-start and difficulty",
+    "Generate UI components, fix bugs and improve styling"
+  ]
+}
